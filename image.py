@@ -3,8 +3,15 @@ from PIL import Image
 import glob
 import os
 
-for file in glob.glob("*.jpg"):
+image_files = []
+for ext in ['*.jpg', '*.jpeg', '*.png', '*.bmp', '*.tiff']:
+    image_files.extend(glob.glob(ext))
+    image_files.extend(glob.glob(ext.upper()))
+image_files.sort()
+
+for file in image_files:
     try:
+            
         img = Image.open(file)
         width, height = img.size
 
