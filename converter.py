@@ -1,4 +1,4 @@
-from fpdf import FPDF
+from fpdf2 import FPDF
 from PIL import Image
 import streamlit as st
 import io
